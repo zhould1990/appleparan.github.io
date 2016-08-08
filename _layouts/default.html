@@ -16,6 +16,10 @@
     <!-- Customisation  -->
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
 
+    {% if page.use_math %}
+      {% include mathjax_support %}
+    {% endif %}
+
 </head>
 <body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
 
@@ -33,22 +37,6 @@
     <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
 	<script type="text/javascript" src="/assets/js/index.js"></script>
-
-    <!-- mathjax config similar to math.stackexchange -->
-	<script type="text/x-mathjax-config">
-	MathJax.Hub.Config({
-	  jax: ["input/TeX", "output/HTML-CSS"],
-	  tex2jax: {
-	    inlineMath: [ ['$', '$'] ],
-	    displayMath: [ ['$$', '$$']],
-	    processEscapes: true,
-	    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-	  },
-	  messageStyle: "none",
-	  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-	});
-	</script>
-	<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
 
     <!-- Google Analytics Tracking code -->
     <script type="text/javascript">
