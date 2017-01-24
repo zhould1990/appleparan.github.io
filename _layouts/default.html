@@ -15,10 +15,17 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
     <!-- Customisation  -->
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+		<script>
+  $("script[type='math/tex']").replaceWith(function() {
+      var tex = $(this).text();
+      return katex.renderToString(tex, {displayMode: false});
+  });
 
-    {% if page.use_math %}
-      {% include mathjax_support %}
-    {% endif %}
+  $("script[type='math/tex; mode=display']").replaceWith(function() {
+      var tex = $(this).html();
+      return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+  });
+		</script>
 
 </head>
 <body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
