@@ -11,7 +11,8 @@ domain_name: 'http://blog.liam.kim'
 google_analytics: 'UA-19932832-3'
 gems: [jekyll-paginate]
 math_engine_opts: {
-  preview: true
+  preview: true,
+  preview_as_code: true
 }
 
 # Details for the RSS feed generator
